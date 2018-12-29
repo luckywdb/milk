@@ -1,0 +1,104 @@
+
+=PROGRESS REPORT==== 28-Dec-2018::17:47:48 ===
+          supervisor: {local,sasl_safe_sup}
+             started: [{pid,<0.66.0>},
+                       {id,alarm_handler},
+                       {mfargs,{alarm_handler,start_link,[]}},
+                       {restart_type,permanent},
+                       {shutdown,2000},
+                       {child_type,worker}]
+
+=PROGRESS REPORT==== 28-Dec-2018::17:47:48 ===
+          supervisor: {local,sasl_sup}
+             started: [{pid,<0.65.0>},
+                       {id,sasl_safe_sup},
+                       {mfargs,
+                           {supervisor,start_link,
+                               [{local,sasl_safe_sup},sasl,safe]}},
+                       {restart_type,permanent},
+                       {shutdown,infinity},
+                       {child_type,supervisor}]
+
+=PROGRESS REPORT==== 28-Dec-2018::17:47:48 ===
+          supervisor: {local,sasl_sup}
+             started: [{pid,<0.67.0>},
+                       {id,release_handler},
+                       {mfargs,{release_handler,start_link,[]}},
+                       {restart_type,permanent},
+                       {shutdown,2000},
+                       {child_type,worker}]
+
+=PROGRESS REPORT==== 28-Dec-2018::17:47:48 ===
+         application: sasl
+          started_at: 'mikl@192.168.2.137'
+
+=PROGRESS REPORT==== 28-Dec-2018::17:47:48 ===
+          supervisor: {local,milk_sup}
+             started: [{pid,<0.74.0>},
+                       {id,network_tcp_sup},
+                       {mfargs,{network_tcp_sup,start_link,[]}},
+                       {restart_type,transient},
+                       {shutdown,brutal_kill},
+                       {child_type,supervisor}]
+
+=PROGRESS REPORT==== 28-Dec-2018::17:47:49 ===
+          supervisor: {local,network_tcp_sup}
+             started: [{pid,<0.75.0>},
+                       {id,network_tcp},
+                       {mfargs,{network_tcp,start_link,[]}},
+                       {restart_type,transient},
+                       {shutdown,brutal_kill},
+                       {child_type,worker}]
+
+=PROGRESS REPORT==== 28-Dec-2018::17:47:49 ===
+          supervisor: {local,milk_sup}
+             started: [{pid,<0.76.0>},
+                       {id,hot_update_sup},
+                       {mfargs,{hot_update_sup,start_link,[]}},
+                       {restart_type,transient},
+                       {shutdown,brutal_kill},
+                       {child_type,supervisor}]
+
+=PROGRESS REPORT==== 28-Dec-2018::17:47:49 ===
+          supervisor: {local,hot_update_sup}
+             started: [{pid,<0.77.0>},
+                       {id,hot_update_code},
+                       {mfargs,{hot_update_code,start_link,[]}},
+                       {restart_type,transient},
+                       {shutdown,brutal_kill},
+                       {child_type,worker}]
+
+=PROGRESS REPORT==== 28-Dec-2018::17:47:49 ===
+          supervisor: {local,hot_update_sup}
+             started: [{pid,<0.78.0>},
+                       {id,hot_update_config},
+                       {mfargs,{hot_update_config,start_link,[]}},
+                       {restart_type,transient},
+                       {shutdown,brutal_kill},
+                       {child_type,worker}]
+
+=PROGRESS REPORT==== 28-Dec-2018::17:47:49 ===
+         application: milk
+          started_at: 'mikl@192.168.2.137'
+
+=PROGRESS REPORT==== 28-Dec-2018::17:47:49 ===
+          supervisor: {local,inet_gethost_native_sup}
+             started: [{pid,<0.84.0>},{mfa,{inet_gethost_native,init,[[]]}}]
+
+=PROGRESS REPORT==== 28-Dec-2018::17:47:49 ===
+          supervisor: {local,kernel_safe_sup}
+             started: [{pid,<0.83.0>},
+                       {id,inet_gethost_native_sup},
+                       {mfargs,{inet_gethost_native,start_link,[]}},
+                       {restart_type,temporary},
+                       {shutdown,1000},
+                       {child_type,worker}]
+
+=PROGRESS REPORT==== 28-Dec-2018::17:47:49 ===
+          supervisor: {local,kernel_safe_sup}
+             started: [{pid,<0.86.0>},
+                       {id,timer_server},
+                       {mfargs,{timer,start_link,[]}},
+                       {restart_type,permanent},
+                       {shutdown,1000},
+                       {child_type,worker}]
