@@ -2,7 +2,7 @@ milk
 =====
 
 An OTP application
-
+test
 Build
 -----
 
