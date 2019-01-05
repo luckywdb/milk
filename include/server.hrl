@@ -12,4 +12,4 @@
 -define(SUPERVISOR(M, F, A), {M, {M, F, A}, transient, brutal_kill, supervisor, [M]}).      %% 监督子进程模板
 -define(WORKER(M, F, A), {M, {M, F, A}, transient, brutal_kill, worker, [M]}).              %% 工作子进程模板
 
--define(ETS_OPTION(KeyPosition), [[order, named_table, public, {keypos, KeyPosition}]]).
+-define(ETS_OPTION(KeyPosition), [set, named_table, public, {keypos, KeyPosition}]).

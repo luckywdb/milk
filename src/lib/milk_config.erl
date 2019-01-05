@@ -6,10 +6,12 @@
 -vsn(1).
 %%%=======================EXPORT=======================
 -behaviour(config_behaviour).
--export([handle_config/2]).
+
+-export([handle_config/2, get/2, get/1]).
 
 %%%=======================INCLUDE======================
 -include("../include/server.hrl").
+
 %%%=======================RECORD=======================
 %%%=======================DEFINE=======================
 %%%=================EXPORTED FUNCTIONS=================
@@ -26,6 +28,27 @@ handle_config({TableName, DataList}, KeyPosition) ->
             ets:delete_all_objects(TableName)%% 先清除这张ets表
     end,
     ets:insert(TableName, DataList).
+
+%% ----------------------------------------------------
+%% Func: handle_config/2
+%% Description: 配置的内容处理
+%% Returns:
+%% ----------------------------------------------------
+get(TableName, Key) ->
+    case ets:lookup(TableName, Key) of
+        [Value] ->
+            Value;
+        _ ->
+            undefiend
+    end.
+
+%% ----------------------------------------------------
+%% Func: get/2
+%% Description: 获取所有数据
+%% Returns:
+%% ----------------------------------------------------
+get(TableName) ->
+    ets:tab2list(TableName).
 
 %%%===================LOCAL FUNCTIONS==================
 %% ----------------------------------------------------
